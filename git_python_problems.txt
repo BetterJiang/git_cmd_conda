@@ -1,0 +1,62 @@
+
+
+# 在目录：E:\Anaconda3\Lib\site-packages\conda\common下修改compat.py
+
+import chardet
+
+def ensure_text_type(value):
+    if isinstance(value, text_type):
+        encoding = 'utf-8'
+    else:
+        encoding = chardet.detect(value).get('encoding') or 'utf-8'
+    return value.decode(encoding) if hasattr(value, 'decode') else value
+
+### old version ###
+def ensure_text_type(value):
+    try:
+        return value.decode('utf-8')
+    except AttributeError:
+        # AttributeError: '<>' object has no attribute 'decode'
+        # In this case assume already text_type and do nothing
+        return value
+    except UnicodeDecodeError:
+        from requests.packages.chardet import detect
+        encoding = detect(value).get('encoding') or 'utf-8'
+        return value.decode(encoding)
+
+##
+
+
+在shell中输入（python shell）
+import pip; 
+print(pip.pep425tags.get_supported())
+可以获取到pip支持的文件名还有版本，
+
+
+
+git config --global user.name "BetterJiang"
+git config --global user.email "jianghaiyan.cn@gmail.com"
+
+
+pip 
+http://landinghub.visualstudio.com/visual-cpp-build-tools
+
+
+'lbfgs._lowlevel' extension
+
+
+
+
+C:\Users\HaiyanJiang\AppData\Roaming\Python\Python36\site-packages\urllib3\contrib
+pyopenssl.py:46: DeprecationWarning: OpenSSL.rand is deprecated - you should use os.urandom instead
+  import OpenSSL.SSL
+now we use the new version
+
+
+git remote add origin git@github.com:BetterJiang/gluon-tutorials-zh.git
+git push -u origin master
+git@github.com:BetterJiang/gluon-tutorials-zh.git
+
+
+
+

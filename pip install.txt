@@ -1,0 +1,67 @@
+C:\Users\HaiyanJiang>d:
+
+D:\>cd pylibpack
+
+D:\pylibpack>pip install pymc-2.3.6-cp36-cp36m-win_amd64.whl
+Processing d:\pylibpack\pymc-2.3.6-cp36-cp36m-win_amd64.whl
+Installing collected packages: pymc
+Successfully installed pymc-2.3.6
+
+
+
+pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+
+
+
+pip list  #列出所有安装的库
+
+pip list --outdated #列出所有过期的库
+
+pip install --upgrade 库名
+#（注意--upgrade后面的空格）
+
+pip install --upgrade sklearn
+# windows下pip报PermissionError解决方案
+# PermissionError: [WinError 5] Access is denied
+
+解决方案：完美解决
+pip install --user package_name
+
+
+解决方案：完美解决
+pip install --user sklearn
+解决方案：
+pip install --user --upgrade sklearn
+
+
+#### upgrade 批量更新所有过期的库
+pip freeze > requirements.txt
+pip install -r requirements.txt --upgrade
+# windows下pip报PermissionError解决方案
+解决方案
+pip install -r requirements.txt --user --upgrade
+
+
+
+
+
+
+
+Works on Windows. Should be good for others too. 
+($ is whatever directory you are in, in command prompt. eg. C:/Users/Username>)
+
+do
+$ pip freeze > requirements.txt
+then do
+$ pip install -r requirements.txt --upgrade
+If you have a problem with a certain package stalling the upgrade (numpy sometimes), 
+just go to the directory ($), comment out the name 
+(add a # before it) and run the upgrade again. You can later uncomment that section back.
+
+
+
+
+Well, I didn't fix pip but I found out that if I use 7zip to open/unpack the wheel file 
+and drag drop the 2 folders in it into C:\Python27\Lib\site-packages that it works!
+
+

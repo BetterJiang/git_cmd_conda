@@ -1,0 +1,8 @@
+name: gluon
+dependencies:
+- python>=3.5
+- jupyter
+- matplotlib
+- pip:
+  - mxnet-0.11.1b20170912-py2.py3-none-win_amd64.whl
+ 

@@ -1,0 +1,49 @@
+
+
+
+cuda download
+https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=Server2012R2&target_type=exelocal
+
+
+git 下载地址
+https://git-for-windows.github.io/
+https://git-scm.com/downloads
+
+Git via Git
+If you already have Git installed, you can get the latest development version via Git itself: 
+git clone https://github.com/git/git 
+You can also always browse the current contents of the git repository using the web interface. 
+
+1. 先安装cuda80
+2. 先安装git
+3. 在git batch 中
+git clone https://github.com/mli/gluon-tutorials-zh
+cd gluon-tutorials-zh
+(提前修改environment.yml 环境名字改为gluongpu,
+提前下载 mxnet cpu 版本
+https://pypi.python.org/pypi/mxnet-cu80/0.11.1b20170930)
+conda env create -f environment.yml
+
+source activate gluon # Windows下 git batch 中 需要 source
+
+然后安装notedown，运行Jupyter并加载notedown插件：
+pip install https://github.com/mli/notedown/tarball/master
+
+4. 
+默认安装的MXNet只支持CPU。
+有一些教程需要GPU来运行。
+假设电脑有N卡而且CUDA7.5或者8.0已经安装了，那么先卸载CPU版本
+
+pip uninstall mxnet
+
+然后选择安装下面版本之一：
+
+pip install --pre mxnet-cu75 # CUDA 7.5
+pip install --pre mxnet-cu80 # CUDA 8.0
+
+
+
+
+
+
+

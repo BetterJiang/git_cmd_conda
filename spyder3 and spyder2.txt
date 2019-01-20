@@ -1,0 +1,31 @@
+win10, 在Anaconda3中实现多版本python Spyder共存:
+
+全程在cmd中操作,以管理员身份运行
+1）先在conda中创建一个名为gluon的环境，并下载对应版本python3.6
+conda create --name gluon python=3.6
+
+2）激活gluon环境
+activate gluon
+
+3）在gluon的环境下下载spyder和Jupter notebook
+
+conda install numpy
+conda install jupyter
+conda install spyder
+
+
+4）完成了
+
+
+
+###############
+
+5）
+d
+
+cd pylibpack
+
+pip install mxnet-0.11.1b20170925-py2.py3-none-win_amd64.whl
+(只能用pip不能用conda, 因为conda是从网站上下载的，pip 是安装本地的whl文件)
+
+

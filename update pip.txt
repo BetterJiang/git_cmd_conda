@@ -1,0 +1,5 @@
+1. Anaconda Prompt
+2. 
+python -m pip install --upgrade pip
+
+

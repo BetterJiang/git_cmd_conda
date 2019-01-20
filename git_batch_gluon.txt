@@ -1,0 +1,42 @@
+
+######### 首次安装 分割线 #########
+1. （第一次这样）打开git batch, 在git batch 里面操作。打开Git命窗口，依次执行如下命令：
+#1# git clone https://github.com/mli/gluon-tutorials-modified
+将文件夹里面的隐藏文件.git删掉,方便以后重新建立自己的git。
+or #2# 将文件下载到本地 cd d:/jupyter/gluon-tutorials-modified/
+(environment.yml 需要提前修改.)
+conda env create -f environment.yml
+source activate gluon # cmd administrator, conda下不需要 source， git batch 环境下需要source
+
+
+2. 在git batch 里面操作, 然后安装notedown，运行Jupyter并加载notedown插件：
+（在gluon环境中装，不需要 cd gluon-tutorials-modified， 可以进入也可以不进入。
+如果cd gluon-tutorials-modified， 可能安装不成功，则不进入）
+pip install https://github.com/mli/notedown/tarball/master
+首先生成jupyter配置文件（如果已经生成过可以跳过） 
+jupyter notebook --generate-config ## overwrite or not 
+
+
+3、jupyter安装配置
+
+将下面这一行加入到生成的配置文件的末尾（Linux/macOS一般在~/.jupyter/jupyter_notebook_config.py) 
+（windows一般在 C:\Users\HaiyanJiang\.jupyter\jupyter_notebook_config.py) 
+c.NotebookApp.contents_manager_class = 'notedown.NotedownContentsManager'
+之后就只需要运行jupyter notebook即可。 
+
+注：配置jupyter notebook默认目录，打开开始生成的jupyter配置文件：/jupyter_notebook_config.py 
+找到c.NotebookApp.notebook_dir = u'D:\jupyter' 把前面的#号去掉，然后在‘ ’填入你想修改后的默认路径即可，然后保存关闭 
+c.NotebookApp.notebook_dir = u'D:\jupyter'
+
+
+######### 测试+使用 分割线 #########
+
+git batch
+cd D:/jupyter/gluon-tutorials-modified/
+source activate gluon
+jupyter notebook
+
+
+
+
+

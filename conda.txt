@@ -1,0 +1,50 @@
+
+conda --version
+
+python --version
+
+
+查看当前系统下的环境
+conda info -e
+
+1.
+# 添加Anaconda的TUNA镜像
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/win-64/
+# TUNA的help中镜像地址加有引号，需要去掉
+或者
+# 优先使用清华conda镜像
+conda config --prepend channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+2.
+# 设置搜索时显示通道地址
+conda config --set show_channel_urls yes
+3. 
+执行完上述命令后，（windpws用户）会生成C:\Users\USER_NAME\.condarc文件，
+记录着我们对conda的配置，直接手动创建、编辑该文件是相同的效果。
+
+
+
+conda update anaconda
+Anaconda使用：打开“开始目录”，找到Anaconda/Anaconda prompt，以管理员权限运行，否则会出现permission denied
+
+
+conda remove numpy
+
+conda install scipy
+
+
+###### 建立新环境 ###
+cmd 管理员打开
+
+python --version
+
+conda create --name python2 python=2.7
+conda create -n python2 python=2.7 (they are the same)
+
+activate python2
+
+
+
+
+
